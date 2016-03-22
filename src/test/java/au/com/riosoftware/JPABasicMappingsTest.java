@@ -54,7 +54,7 @@ public class JPABasicMappingsTest {
 
         Order order = Order.builder()
                 .customer(myself)
-                .createAt(new Date())
+                .createdAt(new Date())
                 .build();
 
         Product mazdaCar = productRepository.findByName("Mazda 3");
