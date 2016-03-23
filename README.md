@@ -1,4 +1,4 @@
-# jpa-basic-mappings
+# jpa-basic-mappings [![Build Status](https://travis-ci.org/marciomarinho/jpa-basic-mappings.svg)](https://travis-ci.org/marciomarinho/jpa-basic-mappings)
 
 Basic JPA Mappings examples
 
