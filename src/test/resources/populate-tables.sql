@@ -21,3 +21,8 @@ INSERT INTO products (name) values ('Baby Pram');
 INSERT INTO products (name) values ('Ice Cream');
 INSERT INTO products (name) values ('Pop Corn');
 INSERT INTO products (name) values ('Mazda 3');
+
+INSERT INTO orders (created_at, customer_id) values (NOW(), 2);
+INSERT INTO items (order_id, product_id, quantity) values (1, 1, 5);
+INSERT INTO items (order_id, product_id, quantity) values (1, 2, 3);
+INSERT INTO items (order_id, product_id, quantity) values (1, 5, 2);

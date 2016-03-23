@@ -83,12 +83,27 @@ public class JPABasicMappingsTest {
         orderRepository.save(order);
 
         List<Order> orders = (List<Order>) orderRepository.findAll();
-        Order foundOrder = orders.get(0);
+        Order foundOrder = orders.get(1);
 
-        assertThat(orders.size(), is(1));
+        assertThat(orders.size(), is(2));
         assertThat(foundOrder.getItems().size(), is(2));
         assertThat(foundOrder.getItems().get(0).getProduct(), is(mazdaCar));
         assertThat(foundOrder.getItems().get(1).getProduct(), is(myPopCorn));
+
+    }
+
+
+    @Test
+    @Sql({"/clear-tables.sql", "/populate-tables.sql"})
+    @Transactional
+    public void shouldDeleteOrder() {
+
+        Customer jonas = customerRepository.findByName("Jonas");
+        Order jonasOrder = orderRepository.findByCustomer(jonas);
+        orderRepository.delete(jonasOrder);
+
+        List<Order> orders = (List<Order>)orderRepository.findAll();
+        assertThat(orders.size(), is(0));
 
     }
 
